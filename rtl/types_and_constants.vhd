@@ -15,6 +15,7 @@ package types_and_constants is
     -- Number of integer bits for the partial sums. Needed to avoid loss of precision.
     constant psum_intbits   : integer := 31;  -- 2*intbits + n - 1
 
-    type sfixed_array is array (n-1 downto 0) of sfixed(intbits-1 downto -fracbits);
+    type sfixed_array is array (0 to n-1) of sfixed(intbits-1 downto -fracbits);
+    type sfixed_mat is array (0 to n-1) of sfixed_array;
 
 end package types_and_constants;
